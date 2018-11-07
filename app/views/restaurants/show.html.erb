@@ -1,0 +1,35 @@
+<h1>Restaurants#show</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @restaurant.name %>
+</p>
+
+<p>
+  <strong>Category</strong>
+  <%= @restaurant.category %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<% @restaurant.reviews.each do |review| %>
+<p>
+  <strong>Rating</strong>
+  <%= review.rating %>
+  <%= review.content %>
+</p>
+<% end %>
+<p>
+  <strong>Call me beep me if you wanna reach me:</strong>
+  <%= @restaurant.phone_number %>
+</p>
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+<%= link_to 'Review', new_restaurant_review_path(@restaurant) %>
+<%= link_to 'Back', restaurants_path %>
+
+<p>Find me in app/views/restaurants/show.html.erb</p>
